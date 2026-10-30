@@ -16,7 +16,7 @@
 ## Lessons learned
 - Brute force grows as n!, so even 30 customers is out of reach; heuristics + local search are the practical answer.
 - On P-n40-k5 the single-start NN + local search answer was 11.6% from optimal, while multi-start reached 0%. The starting point matters as much as the improvement step.
-- In the real-world case, fewer empty-return kilometres was the main source of CO₂ savings (37.1% of the reduction came from empty trips).
+- In the self-created case, fewer empty-return kilometres was the main source of CO₂ savings (37.1% of the reduction came from empty trips).
 
 ## Limitations / future work
 - Distances are straight-line (EUC_2D); real roads, traffic and time windows are not modelled.

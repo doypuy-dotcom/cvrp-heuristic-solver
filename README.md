@@ -1,6 +1,6 @@
 # Multi-Strategy CVRP Solver
 
-**A Python solver for the Capacitated Vehicle Routing Problem that reaches the optimal solution on all 3 benchmark instances (0.00% gap), applied to a real-world SCG CPAC aggregate-delivery case to cut distance by 19.5% and CO₂ by 19.0%.**
+**A Python solver for the Capacitated Vehicle Routing Problem that reaches the optimal solution on all 3 benchmark instances (0.00% gap), then applied to a self-designed practice case modelled on SCG CPAC aggregate delivery, cutting distance by 19.5% and CO₂ by 19.0% versus FIFO.**
 
 Qualifier-round submission for *AI Hackathon Route Optimization 2026* (264 teams → finalist, top 30).
 
@@ -59,9 +59,11 @@ Why run several strategies? On P-n40-k5, single-start Nearest Neighbor + local s
 ![Gap by construction method](images/gap-by-method.png)
 
 ### Self-created case: CPAC aggregate delivery
+> **Note:** this is not a real company dataset. As part of the qualifier, our team designed this case ourselves to be as close as possible to a real SCG CPAC operation, as practice in turning a business problem into a CVRP instance. Results are simulated.
+
 `CPAC-AGG-LKB-20`: a depot in Lat Krabang delivers sand and stone with 10-wheel dump trucks (15 t usable capacity, 8 available) to 20 construction sites, 83 t in total. Latitude/longitude were converted to kilometres for the solver.
 
-| Metric | FIFO (current practice) | **Solver** | Change |
+| Metric | FIFO (baseline) | **Solver** | Change |
 |---|---|---|---|
 | Trucks used | 7 of 8 | **6 of 8** | −1 truck (−14.3%) |
 | Load factor leaving depot | 79.0% | **92.2%** | +13.2 pts |
@@ -123,7 +125,7 @@ python routeoptimization_version4.py benchmarks/A-n32-k5.vrp
 The submitted notebooks with full output are in [`results/notebooks/`](results/notebooks/).
 
 ### Use your own instance
-Any CVRPLIB file with `TYPE : CVRP` and `EDGE_WEIGHT_TYPE : EUC_2D` works. See [`self-created-case/CPAC-AGG-LKB-20.vrp`](self-created-case/CPAC-AGG-LKB-20.vrp) for an example built from real-world locations.
+Any CVRPLIB file with `TYPE : CVRP` and `EDGE_WEIGHT_TYPE : EUC_2D` works. See [`self-created-case/CPAC-AGG-LKB-20.vrp`](self-created-case/CPAC-AGG-LKB-20.vrp) for a self-designed example built from map coordinates.
 
 ## Repository structure
 ```
