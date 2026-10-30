@@ -1,0 +1,66 @@
+
+=======================================================
+  สรุปข้อมูลที่อ่านได้จากไฟล์
+=======================================================
+  ชื่อไฟล์          : B-n31-k5.vrp
+  Depot             : Node 1
+  จำนวน Customer    : 30
+  Capacity          : 100
+  max_vehicles      : 5  (จาก: COMMENT ในไฟล์)
+  min vehicles need : 5
+  Demand รวม        : 412
+  EDGE_WEIGHT_TYPE  : EUC_2D
+
+=======================================================
+  กำลังหา Route ที่ดีที่สุด...
+=======================================================
+  NN + Local Search             : 672
+  Multi-start NN + LS (best)    : 672
+  Clarke-Wright + Local Search  : 677
+  Sweep 36 มุม + LS (best)      : 678
+  Exhaustive partition: ข้ามไป (customers=30 > 22)
+  Perturbation        : กำลังทำ (สูงสุด 50 รอบ)...
+  Perturbation found  : 0 improvements
+
+  ✅ วิธีที่ดีที่สุด: Nearest Neighbor + Local Search
+  ✅ Total Distance : 672
+  ⏱  เวลาที่ใช้     : 5.8 วินาที
+
+=======================================================
+  ผลลัพธ์ที่ดีที่สุด
+=======================================================
+ Vehicle                                          Route  Customers  Demand  Cap Left  Distance
+       1 1 -> 22 -> 17 -> 19 -> 26 -> 6 -> 5 -> 30 -> 1          7      86        14       112
+       2       1 -> 23 -> 7 -> 10 -> 18 -> 14 -> 8 -> 1          6      96         4       110
+       3      1 -> 31 -> 24 -> 9 -> 13 -> 29 -> 27 -> 1          6      97         3       107
+       4 1 -> 4 -> 2 -> 20 -> 25 -> 12 -> 16 -> 15 -> 1          7      95         5       154
+       5                  1 -> 21 -> 28 -> 11 -> 3 -> 1          4      38        62       189
+
+Total Distance = 672
+Optimal Value  = 672
+Gap            = 0.00%
+
+=======================================================
+  Trace: 3 การเลือกแรกของ NN (รถคันที่ 1)
+=======================================================
+ Step  Current Node  Selected Node  EUC_2D  Selected Demand  Load After Selection
+    1             1             22      38                2                     2
+    2            22             17       6               16                    18
+    3            17             19       1               14                    32
+
+=======================================================
+  Validation
+=======================================================
+  ✅ PASS  1. Nodes exist in data: ทุก Node มีอยู่จริง
+  ✅ PASS  2. All customers served: ครบทุกคน
+  ✅ PASS  3. No duplicate customers: ไม่มีซ้ำ
+  ✅ PASS  4. Capacity: ทุกรถไม่เกิน Capacity
+  ✅ PASS  4b. Load match: Demand ตรงกันทุกคัน
+  ✅ PASS  5. Vehicle count: 5 ≤ 5
+  ✅ PASS  6. Start at depot: ทุก Route เริ่มที่ Depot
+  ✅ PASS  7. End at depot: ทุก Route จบที่ Depot
+  ✅ PASS  8. No depot in middle: ไม่มี Depot แทรกกลาง
+  ✅ PASS  9-10. Distance match: ตรงกันทุกคัน (Total = 672)
+
+-------------------------------------------------------
+  OVERALL VALIDATION: PASS ✅
